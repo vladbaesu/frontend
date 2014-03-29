@@ -1,0 +1,26 @@
+<h2>Adauga film</h2>
+
+<form id="filmNouForm">
+<p><label>Nume film</label></p>
+<p><input type="text" id="numeFilm" /></p>
+
+<p><label>Descriere film</label></p>
+<p><textarea id="descriereFilm"> </textarea></p>
+
+<p><label>Link Youtube</label></p>
+<p><input type="text" id="linkYoutube" /></p>
+
+<input id="adaugaFilmButton" type="submit" class="btn btn-primary" value="Adauga film"/>
+</form>
+<script>
+$("#adaugaFilmButton").click(function(e){
+	e.preventDefault();
+	var nume = $("#numeFilm").val();
+	var descriere = $("#descriereFilm").val();
+	var linkYoutube = $("#linkYoutube").val();
+	
+	filme = new Array();
+	var film = new Film(nume, descriere, linkYoutube);
+	localStorage.filme = film;
+});
+</script>
